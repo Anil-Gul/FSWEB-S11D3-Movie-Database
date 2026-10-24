@@ -33,7 +33,7 @@ const App = (props) => {
       .then((res) => {
         history.push('/movies');
         setMovies(res.data);
-        setFavoriteMovies(favoriteMovies.filter((movie) => movie.id != id));
+        setFavoriteMovies((prevFavorites) => prevFavorites.filter((movie) => movie.id != id));
       })
       .catch((err) => {
         console.log(err);
